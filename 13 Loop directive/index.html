@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tuts+ VueJS</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+
+    <ul>
+      <li v-for=" ( value, key, index ) in todo " v-if=" !value.completed ">
+        {{ index }} {{ key }} {{ value.title }}
+      </li>
+    </ul>
+
+  </div>
+
+  <script>
+    
+  var app = new Vue({ el: '#app', data: {
+
+        todo:
+        {
+          "KeyTask0": { completed: false, title: "Task one"   },
+          "KeyTask1": { completed: true , title: "Task two"   },
+          "KeyTask2": { completed: false, title: "Task three" }
+        }
+
+      }
+    });
+  </script>
+</body>
+</html>

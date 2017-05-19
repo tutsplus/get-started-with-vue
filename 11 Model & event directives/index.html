@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tuts+ VueJS</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+
+    <input type="text" v-model="message" @keydown.enter=" keyPressed( 'Param message', $event ) ">
+
+    <button @click=" buttonPressed ">Count {{ counter }}</button>
+
+  </div>
+
+  <script>
+    
+  var app = new Vue({ 
+
+      el: '#app', 
+      data: { message: "Hello world", counter: 0 },
+      methods:
+      {
+        keyPressed: function( msg , event ){ 
+          alert( msg );
+
+          event.srcElement.style.background = "yellow";
+        },
+        buttonPressed: function(){ this.counter += 1; }
+      }
+     
+    });
+  </script>
+</body>
+</html>

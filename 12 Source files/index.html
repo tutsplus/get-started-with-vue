@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tuts+ VueJS</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+
+    <h1 v-if=" number === 1 ">H1: {{ header }}</h1>
+    <h2 v-if=" number === 2 ">H2: {{ header }}</h2>
+    <h3 v-else>H3: 
+      
+      <span v-if="number === 1" > span one </span>
+      <span v-else-if="number === 2" > span two </span>
+      <span v-else > span three </span>
+     
+      {{ header }}
+    </h3>
+
+  </div>
+
+  <script>
+    
+  var app = new Vue({ 
+
+      el: '#app', 
+      data:
+      { 
+        header: "This is my header data",
+        number: 1
+      }
+
+    });
+  </script>
+</body>
+</html>

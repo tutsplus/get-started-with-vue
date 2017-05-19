@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tuts+ VueJS</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+
+    <p> {{ reuseComputed }} </p>
+
+    <p> Changed {{ counter }} </p>
+
+  </div>
+
+  <script>
+    
+  var app = new Vue({ el: '#app',
+
+    data:
+    {
+        message: "Backwards message",
+        counter: 0
+    },
+
+    computed:
+    {
+      reversedMessage: function(){ return this.message.split('').reverse().join(''); },
+
+      abbreviation: function()
+      {
+        var messageArray = this.message.split(' '),
+            abbr = "";
+
+        for( var word in messageArray )
+        {
+          abbr += messageArray[ word ].charAt(0);
+        }
+
+        return abbr.toUpperCase();
+      },
+
+      reuseComputed: function()
+      {
+        return this.message + " is abbreviated to... " + this.abbreviation;
+      }
+    },
+
+    watch:
+    {
+      "reuseComputed": function(){ this.counter += 1; }
+    }
+
+  });
+  </script>
+</body>
+</html>

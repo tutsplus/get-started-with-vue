@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tuts+ VueJS</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <style>
+    section{ width:100px; height:100px; border-radius:3px;  }
+    .grey{ background: #aaa }
+    .grey10{ background: #ccc  }
+    .dark{ background: #333 }
+    .dark10{ background: #bf5549  }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+
+    <section :class=" [
+      colorScheme === 'dark' ? 'dark' : 'grey',
+      colorScheme,
+      colorScheme + ( 5 + 5 ),
+      'stdClass'
+    ] "></section>
+
+  </div>
+
+  <script>
+    
+  var app = new Vue({ el: '#app', 
+                                  data: { colorScheme: "dark" } });
+  </script>
+</body>
+</html>

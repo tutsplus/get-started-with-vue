@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tuts+ VueJS</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+
+    {{ message.split('').reverse().join('') }}
+
+    <br>
+
+    {{ num + ( 5 * 2 ) / 3 - 2 }}
+
+    <br>
+
+    {{ num < 100 ? 'true' : 'false' }}
+    
+  </div>
+
+  <script>
+    
+  var app = new Vue({
+
+    el: '#app',
+
+    data:
+    {
+      message: "hello world",
+      num: 5
+    }
+
+  });
+
+  </script>
+
+</body>
+</html>
